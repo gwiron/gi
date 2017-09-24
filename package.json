@@ -1,0 +1,22 @@
+{
+  "name": "gi",
+  "version": "1.0.0",
+  "description": "Small DVA, multi page web solution.",
+  "main": "index.js",
+  "dependencies": {
+    "events": "^1.1.1",
+    "jsonuri": "^1.5.13",
+    "react": "^15.6.1"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel gi.js -o index.js && babel src/ -d lib/"
+  },
+  "author": "Saohui <gw_iron@163.com>",
+  "license": "ISC"
+}
