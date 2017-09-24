@@ -1,6 +1,6 @@
 {
   "name": "gi-mini-dvajs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Small DVA, multi page web solution.",
   "author": "Saohui <gw_iron@163.com>",
   "homepage": "https://github.com/gwiron/gi",
@@ -8,6 +8,12 @@
     "git": "https://github.com/gwiron/gi"
   },
   "bugs": "https://github.com/gwiron/gi/issues",
+  "keywords": [
+    "react",
+    "dva",
+    "gi",
+    "redux"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
