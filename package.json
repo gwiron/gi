@@ -1,8 +1,18 @@
 {
-  "name": "gi",
+  "name": "gi-mini-dvajs",
   "version": "1.0.0",
   "description": "Small DVA, multi page web solution.",
+  "author": "Saohui <gw_iron@163.com>",
+  "homepage": "https://github.com/gwiron/gi",
+  "repository": {
+    "git": "https://github.com/gwiron/gi"
+  },
+  "bugs": "https://github.com/gwiron/gi/issues",
   "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel gi.js -o index.js && babel src/ -d lib/"
+  },
   "dependencies": {
     "events": "^1.1.1",
     "jsonuri": "^1.5.13",
@@ -13,10 +23,5 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel gi.js -o index.js && babel src/ -d lib/"
-  },
-  "author": "Saohui <gw_iron@163.com>",
-  "license": "ISC"
+  "license": "MIT"
 }
