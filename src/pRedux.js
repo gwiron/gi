@@ -2,8 +2,10 @@
  * @Author: saohui 
  * @Date: 2017-09-22 16:07:21 
  * @Last Modified by: saohui
- * @Last Modified time: 2017-09-23 13:37:29
+ * @Last Modified time: 2017-09-24 11:37:47
  */
+import 'babel-polyfill'
+
 import jsonuri from 'jsonuri'
 import GiUtil from './giUtil'
 

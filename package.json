@@ -1,6 +1,6 @@
 {
   "name": "gi-mini-dvajs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Small DVA, multi page web solution.",
   "author": "Saohui <gw_iron@163.com>",
   "homepage": "https://github.com/gwiron/gi",
@@ -19,6 +19,9 @@
     "react": "^15.6.1"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1"
