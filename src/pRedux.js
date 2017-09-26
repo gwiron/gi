@@ -2,7 +2,7 @@
  * @Author: saohui 
  * @Date: 2017-09-22 16:07:21 
  * @Last Modified by: saohui
- * @Last Modified time: 2017-09-26 08:43:18
+ * @Last Modified time: 2017-09-26 14:58:26
  */
 import 'babel-polyfill'
 
@@ -35,40 +35,38 @@ export default class PRedux extends GiUtil {
     const effect = jsonuri.get( this.effects, type ) || null
     
     if ( effect ) {
-      ( async () => {
-        try {
-          await effect( action, {
-            put: async ( action ) => {
-              const typeing = action.type
-              let retType = ''
-              
-              if ( typeing.indexOf('/') != -1 ) {
-                if ( typeing.indexOf( namespace +'/') != -1 ) {
-                  console.warn('[sagaEffects.put] '+ typeing +' should not be prefixed with namespace '+ namespace )
-                }
-
-                retType = typeing
-              } else {
-                retType = namespace +'/'+ typeing
+      try {
+        await effect( action, {
+          put: async ( action ) => {
+            const typeing = action.type
+            let retType = ''
+            
+            if ( typeing.indexOf('/') != -1 ) {
+              if ( typeing.indexOf( namespace +'/') != -1 ) {
+                console.warn('[sagaEffects.put] '+ typeing +' should not be prefixed with namespace '+ namespace )
               }
-              
-              await this.dispatch({ 
-                ...action
-                ,type: retType
-              })
+
+              retType = typeing
+            } else {
+              retType = namespace +'/'+ typeing
             }
-            ,call: async ( callBack, ...args ) => {
-              return await callBack.apply( null, args )
-            }
-            ,select: async ( getState ) => {
-              return await getState( Object.assign( this.state ))
-            }
-          })
-        } catch ( e ) {
-          // Error unified processing effect => onError( e )
-          this.emit( this.EFFECT_OR_SUBSCR_ERROR, e, this.dispatch.bind( this ))
-        }
-      })()
+            
+            await this.dispatch({ 
+              ...action
+              ,type: retType
+            })
+          }
+          ,call: async ( callBack, ...args ) => {
+            return await callBack.apply( null, args )
+          }
+          ,select: async ( getState ) => {
+            return await getState( Object.assign( this.state ))
+          }
+        })
+      } catch ( e ) {
+        // Error unified processing effect => onError( e )
+        this.emit( this.EFFECT_OR_SUBSCR_ERROR, e, this.dispatch.bind( this ))
+      }
       return
     }
 
