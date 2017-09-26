@@ -2,7 +2,7 @@
  * @Author: saohui 
  * @Date: 2017-09-20 09:56:36 
  * @Last Modified by: saohui
- * @Last Modified time: 2017-09-22 16:52:16
+ * @Last Modified time: 2017-09-26 16:25:23
  */
 import React from 'react'
 import GiApp from './gi'
@@ -57,7 +57,7 @@ export function connect ( mapStateToProps ) {
           // 防止原始值被修改
           Object.assign( appCtx.state )
         )
-        return <TagetComponent dispatch={( action ) => { appCtx.dispatch( action ) }} { ...props } />
+        return <TagetComponent dispatch={ async ( action ) => { await appCtx.dispatch( action ) }} { ...props } />
       }
     }
   }
