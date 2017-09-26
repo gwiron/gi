@@ -2,7 +2,7 @@
  * @Author: saohui 
  * @Date: 2017-09-22 16:07:21 
  * @Last Modified by: saohui
- * @Last Modified time: 2017-09-24 11:37:47
+ * @Last Modified time: 2017-09-26 08:43:18
  */
 import 'babel-polyfill'
 
@@ -58,7 +58,7 @@ export default class PRedux extends GiUtil {
               })
             }
             ,call: async ( callBack, ...args ) => {
-              await callBack.apply( null, args )
+              return await callBack.apply( null, args )
             }
             ,select: async ( getState ) => {
               return await getState( Object.assign( this.state ))
