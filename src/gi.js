@@ -2,7 +2,7 @@
  * @Author: saohui 
  * @Date: 2017-09-22 16:20:57 
  * @Last Modified by: saohui
- * @Last Modified time: 2017-09-23 12:00:09
+ * @Last Modified time: 2017-10-20 08:40:53
  */
 import React from 'react'
 import { render } from 'react-dom'
@@ -100,12 +100,11 @@ export default class GiApp extends PRedux {
                             
     const pageName = this.pageName
     let Page = pageName ? pages[pageName] : null
-    , ResultComponent = null
     
     if ( !appDom ) {
       return Page
     }
 
-    render( ResultComponent, document.querySelector( appDom ))
+    render( <Page />, document.querySelector( appDom ))
   }
 }
