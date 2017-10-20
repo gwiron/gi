@@ -2,11 +2,12 @@
  * @Author: saohui 
  * @Date: 2017-09-20 09:56:36 
  * @Last Modified by: saohui
- * @Last Modified time: 2017-09-26 16:25:23
+ * @Last Modified time: 2017-10-20 08:42:21
  */
 import React from 'react'
 import GiApp from './gi'
 
+// 实例
 let appCtx = null
 
 /**
